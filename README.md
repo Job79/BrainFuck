@@ -2,14 +2,14 @@
 Small Brainfuck interpreter written in c#
 
 ```cs
-static void Run(char[] c, int cellSize = 1000)
+static void Run(char[] c)
 {
-    byte[] s = new byte[cellSize];
+    var s = new List<byte>{0};
     int p = 0, bc = 0;
 
     for (int i = 0; i < c.Length; i++)
     {
-        if (c[i] == '>') p++;
+        if (c[i] == '>' && s.Count == ++p) s.Add(0);
         else if (c[i] == '<') p--;
         else if (c[i] == '+') s[p]++;
         else if (c[i] == '-') s[p]--;
