@@ -1,5 +1,5 @@
 # BrainFuck
-Brainfuck interpreter
+Small Brainfuck interpreter written in c#
 
 ```cs
 static void Run(char[] c, int cellSize = 1000)
